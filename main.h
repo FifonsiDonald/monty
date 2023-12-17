@@ -42,4 +42,8 @@ typedef struct instruction_s
 int execute_commands(char *opcode, stack_t **head, unsigned int count);
 void (*run(char *opcode))(unsigned int count, stack_t **stack);
 void push(unsigned int count, stack_t **head);
+void pall(unsigned int num, stack_t **head);
+void push(unsigned int line_num, stack_t **head);
+void pint(unsigned int line_num, stack_t **head);
+void nop(unsigned int line_num, stack_t **head);
 #endif /* MAIN_H */

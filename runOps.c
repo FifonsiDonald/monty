@@ -6,7 +6,12 @@ void (*run(char *opcode))(unsigned int count, stack_t **stack)
 
 
         instruction_t instruction_s[] = {
+		{"pall", pall},
                 {"push", push},
+		{"pop", f_pop},
+		{"swap", f_swap},
+		{"add", f_add},
+		{"nop", f_nop},
                 {NULL, NULL}
         };
         while (instruction_s[i].f != NULL)
