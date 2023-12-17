@@ -3,7 +3,7 @@
 int main(int argc, char *argv[])
 {
 	int fd;
-	size_t size;
+	/*size_t size;*/
 	char *lineptr;
 	char *opcode, *delimiter = "\n\t\r\a ;:";
 	stack_t *head = NULL;
@@ -22,9 +22,8 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	size = 0;
 
-	read_file = getline(&lineptr, &size, fd);
+	read_file = read(fd, &lineptr, 1024);
 	if (read_file == -1)
 	{
 		fprintf(stderr, "Error reading file %s\n", argv[1]);
@@ -42,7 +41,7 @@ int main(int argc, char *argv[])
 	while (read_file)
 	{
 		execute_commands(opcode, &head, counter);
-		read_file = getline(&lineptr, 1024, fd);
+		/*read_file = getline(&lineptr, 1024, fd);*/
 		if (read_file > 0)
 		{
 			/*execute_commands(opcode, &head, counter);*/

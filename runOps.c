@@ -7,7 +7,7 @@ void (*run(char *opcode))(unsigned int count, stack_t **stack)
 
         instruction_t instruction_s[] = {
                 {"push", push},
-                {NULL,NULL}
+                {NULL, NULL}
         };
         while (instruction_s[i].f != NULL)
         {
@@ -23,10 +23,10 @@ return (NULL);
 
 int execute_commands(char *opcode, stack_t **head, unsigned int count)
 {
-	*head = NULL;
+	/**head = NULL;*/
 	if (run(opcode))
 	{
-		run(opcode)(count, &head);
+		run(opcode)(count, head);
 	}
 	else
 	{
